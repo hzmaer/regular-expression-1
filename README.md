@@ -106,18 +106,56 @@ eg.\n换行 \r制表 \t回车
                 
                 str.replace(re,'b')//'b'
                 
-       example:通过replace来做敏感词过滤
+       example:1.通过replace来做敏感词过滤
                
                <html>
+               
                <body>
+               
                <textarea>
                
                </textarea>
+               
                <textarea>
                
                </textarea>
-               <input></input>
-               <body>
+               
+               <input id="input1"></input>
+               
+               </body>
+               
+               <script>
+               
+               window.onload=function(){
+               
+               var aT=document.getElementsByTagName("textarea");
+               
+               var oInput=document.getElementById("input1");
+               
+               var re=/非礼宾|南海|中国渔船/g           //  |:或者的意思
+               
+               oInput.onclick=function(){
+               
+               aT[1].value=aT[0].value.replace(re,"*")；  //结果被替换的部分无论有几个汉字，都只有一颗*
+               
+               //解决方案 replace的写法：字符串.replace(正则,新的字符串)   replace()里面，第二个参数可以是字符串，也可以是回调函数；
+               //  所以aT[1].value=aT[0].value.replace(re,"*")可以等同于                 
+              //   aT[1].value=aT[0].value.replace(re,function(str){                 
+              //   return '*';               
+             //    })
+                 
+                 aT[1].value=aT[0].value.replace(re,function(str){
+                 //函数的第一个参数就是:匹配成功的字符，
+                 var result="";
+                 for(var i=0;i<str.length;i++){
+                    result+="*";
+                 };
+                 return result;//这样就可以做到过滤敏感词的效果
+                 });                                            
+               }
+               
+               }
+               </script>
                </html>
        
                
