@@ -63,7 +63,9 @@ eg.\n换行 \r制表 \t回车
               如果想达到不区分大小写的效果则在正则的最后加标识符i
               
               var str="abcdef"
+              
               var re=/B/i 这一行 也可以写成var re=RegExp("B","i")
+              
               str.search(re) //-1
               
               
@@ -98,8 +100,7 @@ eg.\n换行 \r制表 \t回车
                 var re=/a/g;
                 
                 str.replace(re,'b')//'bbb'
-                
-                
+                                
                 var str="aaa";
                 
                 var re=/a+/;
@@ -169,6 +170,7 @@ eg.\n换行 \r制表 \t回车
                }
                
                </script>
+               
                </html>
        
                
