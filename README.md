@@ -58,7 +58,11 @@ eg.\n换行 \r制表 \t回车
                                           
               var str="abcdef"
               var re=/B/
-              str.search(re) //-1
+
+
+
+
+str.search(re) //-1
                             
               如果想达到不区分大小写的效果则在正则的最后加标识符i
               
@@ -213,6 +217,26 @@ eg.\n换行 \r制表 \t回车
               str.match(re);//["abc"]
               
        (6).正则中的字符类     
+       
+              任意字符   [abc]    例子：a[bcd]e-abc,ace,ade
+              
+              排除       [^a] ^写在[]里面的话，就代表排除的意思     例子：o[^0-9]t-oat,o?t,o t
+              
+              范围       [a-z]、[0-9]    例子：id[0-9]-id0,id5
+                 
+              
+              字符类：一组相似的元素，[]中括号的整体代表一个字符
+              
+              var str='abc';var re=/abc/;re.test(str);    //true
+
+              var str='abc';var re=/a[bss]c/;re.test(str);//true
+
+              var str='abc';var re=/a[efg]c/;re.test(str);//false
+              
+              var str='abcd';var re=/a[bc]d/;re.test(str);//true
+              
+              
+
               
               
 
