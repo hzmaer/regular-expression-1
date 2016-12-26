@@ -61,13 +61,72 @@ eg.\n换行 \r制表 \t回车
               str.search(re) //-1
                             
               如果想达到不区分大小写的效果则在正则的最后加标识符i
+              
               var str="abcdef"
               var re=/B/i 这一行 也可以写成var re=RegExp("B","i")
               str.search(re) //-1
               
+              
    (3).正则中的match方法     
    
        match:正则去匹配字符串，如果匹配成功返回匹配成功的数组,如果匹配失败返回null;
+       
+       match的写法：字符串.match(正则)
+       
+       example:var str="abc123e5f88gg99ls80";
+               
+               var re=/\d+/g;// +为量词    量词：匹配不确定的位置   +：至少出现一次
+               
+               str.match(re);//["123", "5", "88", "99", "80"]
+               
+               
+    (4).正则中的replace方法   
+        
+        replace:正则去匹配字符串，匹配成功的字符去替换成新的字符串
+       
+        replace的写法：字符串.replace(正则,新的字符串)
+        
+        example:var str="aaa";
+                
+                var re=/a/;
+                
+                str.replace(re,'b')//'baa'
+                
+                
+                var str="aaa";
+                
+                var re=/a/g;
+                
+                str.replace(re,'b')//'bbb'
+                
+                
+                var str="aaa";
+                
+                var re=/a+/;
+                
+                str.replace(re,'b')//'b'
+                
+       example:通过replace来做敏感词过滤
+               
+               <html>
+               <body>
+               <textarea>
+               
+               </textarea>
+               <textarea>
+               
+               </textarea>
+               <input></input>
+               <body>
+               </html>
+       
+               
+                
+                
+                
+       
+               
+       
        
        
        
