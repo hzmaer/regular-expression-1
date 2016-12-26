@@ -88,6 +88,7 @@ eg.\n换行 \r制表 \t回车
        
         replace的写法：字符串.replace(正则,新的字符串)
         
+        
         example:var str="aaa";
                 
                 var re=/a/;
@@ -107,7 +108,9 @@ eg.\n换行 \r制表 \t回车
                 
                 str.replace(re,'b')//'b'
                 
+                
        example:1.通过replace来做敏感词过滤
+       
                
                <html>
                
