@@ -139,22 +139,35 @@ eg.\n换行 \r制表 \t回车
                aT[1].value=aT[0].value.replace(re,"*")；  //结果被替换的部分无论有几个汉字，都只有一颗*
                
                //解决方案 replace的写法：字符串.replace(正则,新的字符串)   replace()里面，第二个参数可以是字符串，也可以是回调函数；
-               //  所以aT[1].value=aT[0].value.replace(re,"*")可以等同于                 
-              //   aT[1].value=aT[0].value.replace(re,function(str){                 
-              //   return '*';               
+               
+               //  所以aT[1].value=aT[0].value.replace(re,"*")可以等同于 
+               
+              //   aT[1].value=aT[0].value.replace(re,function(str){ 
+              
+              //   return '*';   
+              
              //    })
                  
                  aT[1].value=aT[0].value.replace(re,function(str){
+                 
                  //函数的第一个参数就是:匹配成功的字符，
+                 
                  var result="";
+                 
                  for(var i=0;i<str.length;i++){
+                 
                     result+="*";
+                    
                  };
+                 
                  return result;//这样就可以做到过滤敏感词的效果
-                 });                                            
+                 
+                 }); 
+                 
                }
                
                }
+               
                </script>
                </html>
        
